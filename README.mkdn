@@ -1,0 +1,54 @@
+# NAME
+
+App::GlitchIME - Japanese translation with Google translation API
+
+# SYNOPSIS
+
+  use App::GlitchIME;
+
+  binmode STDOUT, ":utf8";
+
+  my $ime = App::GlitchIME->new($japanse_sentence);
+
+  for (1..10) {
+      print $ime->generate, "\n";
+  }
+
+# DESCRIPTION
+
+App::GlitchIME is perl version of __glitch-ime__(written in Ruby).
+
+# METHODS
+
+- my $ime = App::GlitchIME->new($text)
+
+This method creates new instance of App::GlitchIME
+
+`$text` argument should be Japanese __HIRAGANA__.
+And it should be octet stream.
+
+- my $str = $img->generate();
+
+This method returns string which is concatenated candidate of each segment.
+Choice of candidate is random. So you may get another string when you
+call this method next time.
+
+# AUTHOR
+
+Syohei YOSHIDA <syohex@gmail.com>
+
+# COPYRIGHT
+
+Copyright 2011- Syohei YOSHIDA
+
+# LICENSE
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+# SEE ALSO
+
+Original code in Ruby language by hitode909
+[http://d.hatena.ne.jp/hitode909/20110221](http://d.hatena.ne.jp/hitode909/20110221).
+
+Guide of translation API [http://www.google.co.jp/intl/ja/ime/cgiapi.html](http://www.google.co.jp/intl/ja/ime/cgiapi.html)
