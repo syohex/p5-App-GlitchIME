@@ -90,7 +90,7 @@ App::GlitchIME is perl version of B<glitch-ime>(written in Ruby).
 
 =item my $ime = App::GlitchIME->new($text)
 
-This method creates new instance of App::GlitchIME
+This method creates new instance of App::GlitchIME.
 
 C<$text> argument should be Japanese B<HIRAGANA>.
 And it should be octet stream.
@@ -98,8 +98,7 @@ And it should be octet stream.
 =item my $str = $img->generate();
 
 This method returns string which is concatenated candidate of each segment.
-Choice of candidate is random. So you may get another string when you
-call this method next time.
+Choice of candidate is random. So you may get a different string each time.
 
 =back
 
