@@ -33,7 +33,9 @@ sub generate {
 sub _get_candidates {
     my $self = shift;
 
-    my $ua = LWP::UserAgent->new(timeout => 5, env_proxy=>1);
+    my $ua = LWP::UserAgent->new(agent => __PACKAGE__ . "/$VERSION");
+    $ua->env_proxy;
+
     my $uri = URI->new("http://www.google.com/transliterate");
     $uri->query_form(
         langpair => 'ja-Hira|ja',
